@@ -59,8 +59,7 @@ const SignupPage: React.FC = () => {
           title: "Login Successfull ",
           description: "User login was successful",
         });
-        localStorage.setItem("usertoken", JSON.stringify(data.token));
-        localStorage.setItem("userData", JSON.stringify(data.user));
+        localStorage.setItem("accessToken", data.token.accessToken);
         setLoading(false);
         navigate.push("/login");
       })

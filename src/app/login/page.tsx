@@ -35,8 +35,7 @@ const LoginPage: React.FC = () => {
           title: "Login Successfull ",
           description: "User login was successful",
         });
-        localStorage.setItem("usertoken", JSON.stringify(data.token));
-        localStorage.setItem("userData", JSON.stringify(data.user));
+        localStorage.setItem("accessToken", data.token.accessToken);
         setLoading(false);
         navigate.push("/customers");
       })
@@ -109,7 +108,7 @@ const LoginPage: React.FC = () => {
           <button
             disabled={loading}
             type="submit"
-            className="w-full transform rounded-lg bg-blue-600 px-4 py-3 font-bold text-white transition-transform hover:scale-105 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500"
+            className="w-full transform rounded-lg bg-blue-600 px-4 py-3 font-bold text-white transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500"
           >
             {loading ? "Loading..." : "Log In"}
           </button>
