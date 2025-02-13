@@ -19,7 +19,7 @@ export class UsersService {
   }
 
   async getUser(query: FilterQuery<User>) {
-    const user = (await this.userModel.findOne(query)).toObject();
+    const user = (await this.userModel.findOne(query))?.toObject();
     if (!user) {
       throw new NotFoundException('User not found');
     }

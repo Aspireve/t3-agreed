@@ -12,10 +12,10 @@ export class User {
   @Prop({
     unique: true,
   })
-  email: String;
+  email: string;
 
   @Prop()
-  password: String;
+  password: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
